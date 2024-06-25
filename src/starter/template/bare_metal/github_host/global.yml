@@ -1,0 +1,2 @@
+host: "{{ host }}"
+host_backup: "{{ host_backup }}"

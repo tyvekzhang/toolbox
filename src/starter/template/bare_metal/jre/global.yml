@@ -1,0 +1,1 @@
+jdk_version: "{{ version | default('8') }}"

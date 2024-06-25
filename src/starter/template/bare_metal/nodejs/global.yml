@@ -1,0 +1,2 @@
+node_version: "{{ node_version }}"
+nvm_version: "{{ nvm_version }}"

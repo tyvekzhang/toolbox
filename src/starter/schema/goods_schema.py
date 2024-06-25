@@ -1,0 +1,1 @@
+"""Goods domain schema"""

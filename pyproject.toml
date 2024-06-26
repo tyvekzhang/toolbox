@@ -7,7 +7,7 @@ requires = [
 [tool.poetry]
 name = "toolbox"
 version = "0.1.0"
-description = "Toolbox aims to be one of the best devops helper."
+description = "Toolbox is one of the best devops tool helper."
 license = "MIT"
 authors = [
   "tyvekZhang <tyvek.zhang@gmail.com>",

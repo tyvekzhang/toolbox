@@ -1,4 +1,5 @@
 """Goods operation controller"""
+from typing import Dict
 
 from fastapi import APIRouter, UploadFile, File, Depends
 
@@ -36,3 +37,13 @@ async def upload_zip(
     )
     response = await goods_service.save(record=goods_record)
     return result.success(data=response.id)
+
+
+@goods_router.get("/goods")
+async def get_goods(
+    page: int = 1,
+    size: int = 20,
+    current_user: CurrentUser = Depends(get_current_user()),
+) -> Dict:
+    response = await goods_service.list_goods(page, size)
+    return result.success(data=response)

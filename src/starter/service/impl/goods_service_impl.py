@@ -16,3 +16,6 @@ class GoodsServiceImpl(ServiceImpl[GoodsMapper, GoodsDO], GoodsService):
         """
         super().__init__(mapper=mapper)
         self.mapper = mapper
+
+    async def list_goods(self, page, size):
+        return await self.mapper.list_goods(page, size)

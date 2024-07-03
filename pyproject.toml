@@ -78,7 +78,6 @@ sphinx-rtd-theme = "^2.0.0"
 [[tool.poetry.source]]
 name = "tsinghua"
 url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/"
-priority = "primary"
 
 [tool.coverage.run]
 parallel = true

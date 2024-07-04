@@ -1,4 +1,5 @@
 """Goods operation controller"""
+
 from typing import Dict
 
 from fastapi import APIRouter, UploadFile, File, Depends

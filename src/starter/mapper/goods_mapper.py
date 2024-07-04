@@ -12,10 +12,7 @@ from src.starter.model.goods_do import GoodsDO
 
 class GoodsMapper(SqlModelMapper[GoodsDO]):
     async def list_goods(
-            self,
-            page: int,
-            size: int,
-            db_session: Union[AsyncSession, None] = None
+        self, page: int, size: int, db_session: Union[AsyncSession, None] = None
     ) -> Dict[str, Union[List[Dict[str, Union[int, str]]], int]]:
         db_session = db_session or self.db.session
 
@@ -39,17 +36,12 @@ class GoodsMapper(SqlModelMapper[GoodsDO]):
                 "id": record.id,
                 "name": record.name,
                 "pic_url": record.pic_url,
-                "description": record.description
+                "description": record.description,
             }
             for record in records
         ]
 
-        return {
-            "items": goods_list,
-            "total": total_count,
-            "page": page,
-            "size": size
-        }
+        return {"items": goods_list, "total": total_count, "page": page, "size": size}
 
 
 goodsMapper = GoodsMapper(GoodsDO)

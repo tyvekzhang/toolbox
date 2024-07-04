@@ -1,4 +1,4 @@
-"""Kubernetes operation controller"""
+"""Kubernetes' operation controller"""
 
 from fastapi import APIRouter, Depends, WebSocket
 
@@ -25,3 +25,31 @@ async def init_k8s(
         k8sInitCmd: K8sInitCmd = K8sInitCmd.parse_raw(req)
         process = await k8s_service.k8s_init(k8sInitCmd)
         await handle_playbook_result(process, websocket)
+
+
+@k8s_router.websocket("/minio")
+async def add_minio(
+    websocket: WebSocket, current_user: CurrentUser = Depends(get_current_user)
+):
+    pass
+
+
+@k8s_router.websocket("/reset")
+async def reset_k8s(
+    websocket: WebSocket, current_user: CurrentUser = Depends(get_current_user)
+):
+    pass
+
+
+@k8s_router.websocket("/add_worker")
+async def add_worker(
+    websocket: WebSocket, current_user: CurrentUser = Depends(get_current_user)
+):
+    pass
+
+
+@k8s_router.websocket("/remove_worker")
+async def remove_worker(
+    websocket: WebSocket, current_user: CurrentUser = Depends(get_current_user)
+):
+    pass
